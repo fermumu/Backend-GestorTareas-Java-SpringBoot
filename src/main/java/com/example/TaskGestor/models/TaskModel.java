@@ -2,6 +2,7 @@ package com.example.TaskGestor.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class TaskModel {
@@ -29,7 +30,7 @@ public class TaskModel {
     @Column(nullable = false)
     private String categoria;
 
-    @NotBlank(message = "Campo obligatorio")
+    @NotNull
     @Column(nullable = false)
     private Boolean isCompleted;
 
@@ -86,11 +87,11 @@ public class TaskModel {
         this.categoria = categoria;
     }
 
-    public Boolean getCompleted() {
+    public Boolean getIsCompleted() {
         return isCompleted;
     }
 
-    public void setCompleted(Boolean completed) {
-        isCompleted = completed;
+    public void setIsCompleted(Boolean isCompleted) {
+        this.isCompleted = isCompleted;
     }
 }

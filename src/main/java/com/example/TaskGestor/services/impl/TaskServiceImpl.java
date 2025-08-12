@@ -29,7 +29,7 @@ public class TaskServiceImpl implements TaskService {
         tasks.setPrioridad(task.getPrioridad());
         tasks.setFechLimite(task.getFechLimite());
         tasks.setCategoria(task.getCategoria());
-        tasks.setCompleted(task.getCompleted());
+        tasks.setIsCompleted(task.getIsCompleted());
         return taskRepository.save(tasks);
     }
 
@@ -47,7 +47,7 @@ public class TaskServiceImpl implements TaskService {
             taskExist.setPrioridad(editTask.getPrioridad());
             taskExist.setFechLimite(editTask.getFechLimite());
             taskExist.setCategoria(editTask.getCategoria());
-            taskExist.setCompleted(editTask.getCompleted());
+            taskExist.setIsCompleted(editTask.getIsCompleted());
             taskRepository.save(taskExist);
         }else {
             throw new RuntimeException("Tarea no encontrada");
